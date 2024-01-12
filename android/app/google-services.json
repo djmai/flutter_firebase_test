@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "31249981661",
+    "firebase_url": "https://todo-app-83eb9.firebaseio.com",
+    "project_id": "todo-app-83eb9",
+    "storage_bucket": "todo-app-83eb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31249981661:android:8f657fd4746cecd8a33b34",
+        "android_client_info": {
+          "package_name": "com.mmartinezdev.firebase_crud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31249981661-ise0khais30p95hpv056ngfdn0h6urf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mmartinezdev.firebase_crud",
+            "certificate_hash": "c83dc263f689d1290f92024fce54dfdd7953f937"
+          }
+        },
+        {
+          "client_id": "31249981661-jhamfe4f124hs846ko6rq71gvi5n641g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBjeH6Kt1T9Swy2qf92BlQIkKYMTzILXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31249981661-jhamfe4f124hs846ko6rq71gvi5n641g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "31249981661-67t0cks0esik27sh401jbq6u1p87rs4n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mmartinezdev.firebaseCrud.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31249981661:android:201381236069957ea33b34",
+        "android_client_info": {
+          "package_name": "com.mmartinezdev.firebase_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31249981661-jhamfe4f124hs846ko6rq71gvi5n641g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBjeH6Kt1T9Swy2qf92BlQIkKYMTzILXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31249981661-jhamfe4f124hs846ko6rq71gvi5n641g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "31249981661-67t0cks0esik27sh401jbq6u1p87rs4n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mmartinezdev.firebaseCrud.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
