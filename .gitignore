@@ -44,3 +44,6 @@ app.*.map.json
 
 # FVM
 .fvm/futter_sdk
+
+# Firebase Options
+lib/firebase_options.dart
