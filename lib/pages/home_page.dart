@@ -1,7 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-import '../services/firebase/auth_firebase.dart';
+import '../services/auth/auth_firebase.dart';
 
 class MyHomePage extends StatefulWidget {
   static String routerName = 'home';
