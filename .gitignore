@@ -43,7 +43,7 @@ app.*.map.json
 /android/app/release
 
 # FVM
-.fvm/futter_sdk
+.fvm/flutter_sdk
 
 # Firebase Options
 lib/firebase_options.dart
