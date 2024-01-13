@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../models/models.dart';
 import '../pages/pages.dart';
-import '../services/auth/auth_firebase.dart';
+import '../utils/utils.dart';
+import '../services/services.dart';
 
 class MyHomePage extends StatefulWidget {
   static String routerName = 'home';
@@ -23,6 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // Obtener los datos del usuario en caso de que existan
     User? _user = _auth.user;
+
+    final MenuService _menuService = MenuService();
 
     return Scaffold(
       appBar: AppBar(
@@ -50,21 +55,47 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _user?.displayName != null
-                ? Text('Hola ${_user?.displayName}, Bienvenido')
-                : const Text('Inicie sesión'),
-            _user?.email != null ? Text('${_user?.email}') : const Text(''),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, EmpresasPage.routerName),
-        tooltip: 'Empresas',
-        child: const Icon(Icons.holiday_village),
+      body: StreamBuilder(
+        stream: _menuService.getItemsMenu('menu-mectel'),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          }
+
+          if (!snapshot.hasData) {
+            return const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Upps!, al parecer no tienes permisos para navegar'),
+                ],
+              ),
+            );
+          }
+
+          List<DocumentSnapshot> menuItems = snapshot.data!.docs;
+          return ListView.builder(
+            itemCount: menuItems.length,
+            itemBuilder: (context, index) {
+              // var item = menuItems[index];
+              Menu item = Menu.fromDocumentSnapshot(menuItems[index]);
+
+              // print(item.toJson());
+
+              if (item.route != '' && item.route != null) {
+                return ListTile(
+                  leading: item.icon != '' ? getIcon(item.icon!) : null,
+                  title: Text(item.name),
+                  trailing: const Icon(Icons.keyboard_arrow_right),
+                  contentPadding: const EdgeInsets.all(10),
+                  onTap: () => item.route != '' && item.route != null
+                      ? Navigator.pushNamed(context, item.route!)
+                      : null,
+                );
+              }
+            },
+          );
+        },
       ),
     );
   }
