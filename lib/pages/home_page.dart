@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../pages/pages.dart';
 import '../services/auth/auth_firebase.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -59,6 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
             _user?.email != null ? Text('${_user?.email}') : const Text(''),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, EmpresasPage.routerName),
+        tooltip: 'Empresas',
+        child: const Icon(Icons.holiday_village),
       ),
     );
   }
